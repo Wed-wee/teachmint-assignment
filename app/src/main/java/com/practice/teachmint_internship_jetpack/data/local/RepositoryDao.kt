@@ -11,6 +11,6 @@ interface RepositoryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertRepositories(repositories: List<RepositoryEntity>)
 
-    @Query("SELECT * FROM RepositoryEntity")
+    @Query("SELECT * FROM RepositoryEntity LIMIT 15")
     fun getAllRepositories(): Flowable<List<RepositoryEntity>>
 }
